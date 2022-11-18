@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import sklearn as sk
 import matplotlib.pyplot as plt
 from sklearn import datasets
 from sklearn import metrics
@@ -96,7 +97,7 @@ with modelTraining:
 			y_pred = svc.predict(X_test)
 			st.write("Accuracy:" ,metrics.accuracy_score(y_test, y_pred))
 		else: 
-			logreg = linear_model.LogisticRegression(random_state=25)
+			logreg = sk.linear_model.LogisticRegression(random_state=25)
 			logreg.fit(X_train, y_train)
 			y_pred = logreg.predict(X_test)
 			st.write("Accuracy:" ,metrics.accuracy_score(y_test, y_pred))
